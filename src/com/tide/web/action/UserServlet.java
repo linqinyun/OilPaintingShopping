@@ -17,7 +17,16 @@ public class UserServlet extends HttpServlet {
         String methodName = request.getParameter("method");
         if("login".equals(methodName)){
             login(request,response);
+        }else if ("logout".equals(methodName)){
+            logout(request,response);
         }
+    }
+
+    private void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        // 1.将session销毁
+        request.getSession().invalidate();
+        // 2.页面进行跳转，跳转登录页面
+        response.sendRedirect(request.getContextPath()+"/admin/login.jsp");
     }
 
     /**
@@ -25,7 +34,7 @@ public class UserServlet extends HttpServlet {
      * @param request
      * @param response
      */
-    private void login(HttpServletRequest request,HttpServletResponse response){
+    private void login(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
         // 接受用户名和密码
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -40,22 +49,15 @@ public class UserServlet extends HttpServlet {
         if (existUser == null){
             // error
             request.setAttribute("msg","用户名或密码错误");
-            try {
-                request.getRequestDispatcher("/admin/login.jsp").forward(request,response);
-            } catch (ServletException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+
+            request.getRequestDispatcher("/admin/login.jsp").forward(request,response);
+
         }else {
             // success
             // 用户信息保存，页面跳转
             request.getSession().setAttribute("existUser",existUser);
-            try {
-                response.sendRedirect(request.getContextPath()+"/admin/category_list.jsp");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            response.sendRedirect(request.getContextPath()+"/admin/category_list.jsp");
+
         }
     }
     @Override
