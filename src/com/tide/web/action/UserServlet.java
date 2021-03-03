@@ -56,7 +56,7 @@ public class UserServlet extends HttpServlet {
             // success
             // 用户信息保存，页面跳转
             request.getSession().setAttribute("existUser",existUser);
-            response.sendRedirect(request.getContextPath()+"/admin/category_list.jsp");
+            response.sendRedirect(request.getContextPath()+"/CategoryServlet?method=findAll");
 
         }
     }

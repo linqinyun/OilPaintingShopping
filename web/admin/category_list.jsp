@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html>
@@ -43,7 +44,7 @@
                                     <i class="fa fa-trash"></i>
                                 </button>
                                 <button type="button" class="btn btn-default light">
-                                    <i class="fa fa-plus" onclick="javascript:window.location.href='/employee/to_add';"></i>
+                                    <i class="fa fa-plus" onclick="javascript:window.location.href='${pageContext.request.contextPath }/CategoryServlet?method=saveUI';"></i>
                                 </button>
                             </div>
                         </div>
@@ -71,18 +72,20 @@
                         </tr>
                         </thead>
                         <tbody>
-                        	
-                            <tr class="message-unread">
-                                <td>分类1</td>
-                            
-                                <td>
-									分类描述
-                                </td>
-                                <td>
-                                    <a href="#">编辑</a>
-                                    <a href="#">删除</a>
-                                </td>
-                            </tr>
+                        	<c:forEach var="c" items="${list}">
+                                <tr class="message-unread">
+                                    <td>${c.cname}</td>
+
+                                    <td>
+                                        ${c.cdesc}
+                                    </td>
+                                    <td>
+                                        <a href="#">编辑</a>
+                                        <a href="#">删除</a>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+
                         	
                         </tbody>
                     </table>

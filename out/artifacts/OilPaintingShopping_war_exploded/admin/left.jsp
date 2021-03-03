@@ -13,11 +13,11 @@
                     </a>
                     <ul class="nav sub-nav">
                         <li>
-                            <a href="goods_list.html">
+                            <a href="${pageContext.request.contextPath}/CategoryServlet?method=findAll">
                                 <span class="glyphicon glyphicon-calendar"></span> 商品列表 </a>
                         </li>
                         <li>
-                            <a href="goods_add.html">
+                            <a href="${pageContext.request.contextPath}/CategoryServlet?method=saveUI">
                                 <span class="glyphicon glyphicon-check"></span> 添加商品 </a>
                         </li>
 						<li>
