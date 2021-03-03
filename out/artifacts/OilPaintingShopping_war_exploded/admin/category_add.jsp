@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 
@@ -9,91 +9,111 @@
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
 
-<title>油画商城--添加分类</title>
+    <title>油画商城--添加分类</title>
 
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/assets/skin/default_skin/css/theme.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/assets/admin-tools/admin-forms/css/admin-forms.css">
-<link rel="shortcut icon" href="${pageContext.request.contextPath }/assets/img/favicon.ico">
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath }/assets/skin/default_skin/css/theme.css">
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath }/assets/admin-tools/admin-forms/css/admin-forms.css">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath }/assets/img/favicon.ico">
 </head>
 
 <body class="admin-validation-page" data-spy="scroll" data-target="#nav-spy" data-offset="200">
 <div id="main">
- <%@ include file="header.jsp" %>
- 
- <%@ include file="left.jsp" %>
- 
-    <section id="content_wrapper">
-<section id="content" class="table-layout animated fadeIn">
-    <div class="tray tray-center">
-        <div class="content-header">
-            <h2> 添加分类 </h2>
-            <p class="lead"></p>
-        </div>
-        <div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
-            <div class="panel heading-border">
-                <form id="admin-form" name="addForm" action="/department/add" method="post">
-                    <div class="panel-body bg-light">
-                        <div class="section-divider mt20 mb40">
-                            <span> 基本信息 </span>
-                        </div>
-                        <div class="section row">
-                           
-                        <div class="section row">
-							<div class="col-md-2"></div>
-							<div class="col-md-1">
-                                <label for="sn" class="field prepend-icon">
-                                    <label for="sn" class="field-icon">
-										名称
-                                    </label>
-                                </label>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="sn" class="field">
-                                    <input id="sn" name="sn" class="gui-input" placeholder="名称" type="text" value="imooc"/>
-                                </label>
-                            </div>
-                        </div>
-						
-                        <div class="section row">
-							<div class="col-md-2"></div>
-							<div class="col-md-1">
-                                <label for="sn" class="field prepend-icon">
-                                    <label for="sn" class="field-icon">
-										描述
-                                    </label>
-                                </label>
-                            </div>
-							<div class="col-md-6">
-								<label for="address" class="field">
-									<input id="address" name="address" class="gui-input" placeholder="描述" type="text" value=""/>
-								</label>
-							</div>
-                        </div>
-                        <div class="panel-footer text-center">
-                            <button type="submit" class="button"> 保存 </button>
-                            <button type="button" class="button" onclick="javascript:window.history.go(-1);"> 返回 </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
+    <%@ include file="header.jsp" %>
 
-</section>
+    <%@ include file="left.jsp" %>
+
+    <section id="content_wrapper">
+        <section id="content" class="table-layout animated fadeIn">
+            <div class="tray tray-center">
+                <div class="content-header">
+                    <h2> 添加分类 </h2>
+                    <p class="lead"></p>
+                </div>
+                <div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
+                    <div class="panel heading-border">
+
+                        <form id="admin-form" name="addForm" action="${pageContext.request.contextPath}/CategoryServlet"
+                              method="post">
+
+                            <input type="hidden" name="method" value="save">
+                            <div class="panel-body bg-light">
+                                <div class="section-divider mt20 mb40">
+                                    <span> 基本信息 </span>
+                                </div>
+                                <div class="section row">
+
+                                    <div class="section row">
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-1">
+                                            <label for="sn" class="field prepend-icon">
+                                                <label for="sn" class="field-icon">
+                                                    名称
+                                                </label>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="sn" class="field">
+                                                <input id="sn" name="cname" class="gui-input" placeholder="名称"
+                                                       type="text" value="imooc"/>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="section row">
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-1">
+                                            <label for="sn" class="field prepend-icon">
+                                                <label for="sn" class="field-icon">
+                                                    描述
+                                                </label>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="address" class="field">
+                                                <input id="address" name="cdesc" class="gui-input" placeholder="描述"
+                                                       type="text" value=""/>
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="panel-footer text-center">
+                                        <button type="submit" class="button"> 保存</button>
+                                        <button type="button" class="button"
+                                                onclick="javascript:window.history.go(-1);"> 返回
+                                        </button>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </section>
 </div>
 <style>
     /* demo page styles */
-    body { min-height: 2300px; }
+    body {
+        min-height: 2300px;
+    }
 
     .content-header b,
     .admin-form .panel.heading-border:before,
     .admin-form .panel .heading-border:before {
         transition: all 0.7s ease;
     }
+
     /* responsive demo styles */
     @media (max-width: 800px) {
-        .admin-form .panel-body { padding: 18px 12px; }
+        .admin-form .panel-body {
+            padding: 18px 12px;
+        }
     }
 </style>
 

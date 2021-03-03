@@ -49,7 +49,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="sn" class="field">
-                                    <input id="sn" name="sn" class="gui-input" placeholder="名称" type="text" value="imooc"/>
+                                    <input id="sn" name="cname" class="gui-input" placeholder="名称" type="text" value="${category.cname}"/>
                                 </label>
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                             </div>
 							<div class="col-md-6">
 								<label for="address" class="field">
-									<input id="address" name="address" class="gui-input" placeholder="描述" type="text" value=""/>
+									<input id="address" name="cdesc" class="gui-input" placeholder="描述" type="text" value="${category.cdesc}"/>
 								</label>
 							</div>
                         </div>

@@ -34,11 +34,11 @@
                     </a>
                     <ul class="nav sub-nav">
                         <li>
-                            <a href="${pageContext.request.contextPath }/CategoryServlet?method=findAll">
+                            <a href="${pageContext.request.contextPath}/CategoryServlet?method=findAll">
                                 <span class="glyphicon glyphicon-calendar"></span> 分类列表 </a>
                         </li>
                         <li>
-                            <a href="${pageContext.request.contextPath }/CategoryServlet?method=saveUI">
+                            <a href="${pageContext.request.contextPath}/CategoryServlet?method=saveUI">
                                 <span class="glyphicon glyphicon-check"></span> 添加分类 </a>
                         </li>
 						<li>
