@@ -84,7 +84,7 @@
                                         </td>
                                         <td>
                                             <a href="${pageContext.request.contextPath}/CategoryServlet?method=edit&cid=${c.cid}">编辑</a>
-                                            <a href="#">删除</a>
+                                            <a href="${pageContext.request.contextPath}/CategoryServlet?method=delete&cid=${c.cid}">删除</a>
                                         </td>
                                     </tr>
                                 </c:forEach>

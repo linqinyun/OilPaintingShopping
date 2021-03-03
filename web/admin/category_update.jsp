@@ -31,7 +31,9 @@
         </div>
         <div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
             <div class="panel heading-border">
-                <form id="admin-form" name="addForm" action="/department/add" method="post">
+                <form id="admin-form" name="addForm" action="${pageContext.request.contextPath}/CategoryServlet" method="post">
+                    <input type="hidden" name="method" value="update">
+                    <input type="hidden" name="cid" value="${category.cid}">
                     <div class="panel-body bg-light">
                         <div class="section-divider mt20 mb40">
                             <span> 基本信息 </span>
@@ -74,6 +76,7 @@
                             <button type="submit" class="button"> 保存 </button>
                             <button type="button" class="button" onclick="javascript:window.history.go(-1);"> 返回 </button>
                         </div>
+                    </div>
                     </div>
                 </form>
             </div>

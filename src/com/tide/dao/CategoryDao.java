@@ -11,4 +11,8 @@ public interface CategoryDao {
     void save(Category category);
 
     Category findOne(Integer cid);
+
+    void update(Category category);
+
+    void delete(Integer cid);
 }

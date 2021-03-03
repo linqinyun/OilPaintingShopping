@@ -84,4 +84,41 @@ public class CategoryDaoImpl implements CategoryDao {
         }
         return null;
     }
+
+    @Override
+    public void update(Category category) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+
+        try {
+            conn = JDBCUtils.getConnection();
+            String sql = "update category set cname=?,cdesc=? where cid=?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,category.getCname());
+            pstmt.setString(2,category.getCdesc());
+            pstmt.setInt(3,category.getCid());
+            pstmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.release(pstmt,conn);
+        }
+    }
+
+    @Override
+    public void delete(Integer cid) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        try {
+            conn = JDBCUtils.getConnection();
+            String sql = "delete from category where cid = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1,cid);
+            pstmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.release(pstmt,conn);
+        }
+    }
 }

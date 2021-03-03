@@ -16,16 +16,56 @@ public class CategoryServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 请求路径
         String methodName = request.getParameter("method");
-        if ("findAll".equals(methodName)) { //查询全部分类
+        if ("findAll".equals(methodName)) {
+            //查询全部分类
             findAll(request, response);
-        } else if ("saveUI".equals(methodName)) { //saveUI页面
+        } else if ("saveUI".equals(methodName)) {
+            //saveUI页面
             saveUI(request, response);
         } else if ("save".equals(methodName)) {
+            //添加
             save(request, response);
         } else if ("edit".equals(methodName)) {
             // 编辑分类
             edit(request, response);
+        }else if ("update".equals(methodName)){
+            // 修改
+            update(request,response);
+        }else if ("delete".equals(methodName)){
+            // 删除--硬删除
+            delete(request,response);
         }
+    }
+
+    /**
+     * 后台删除分类的方法
+     * @param request
+     * @param response
+     */
+    private void delete(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Integer cid = Integer.parseInt(request.getParameter("cid"));
+        CategoryService categoryService = new CategoryServiceImpl();
+        categoryService.delete(cid);
+
+        response.sendRedirect(request.getContextPath() + "/CategoryServlet?method=findAll");
+    }
+
+    /**
+     * 后台修改分类
+     * @param request
+     * @param response
+     */
+    private void update(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Integer cid = Integer.parseInt(request.getParameter("cid"));
+        String cname = request.getParameter("cname");
+        String cdesc = request.getParameter("cdesc");
+        Category category = new Category();
+        category.setCid(cid);
+        category.setCname(cname);
+        category.setCdesc(cdesc);
+        CategoryService categoryService = new CategoryServiceImpl();
+        categoryService.update(category);
+        response.sendRedirect(request.getContextPath() + "/CategoryServlet?method=findAll");
     }
 
     /**
