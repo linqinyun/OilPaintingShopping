@@ -79,7 +79,7 @@ public class UploadUtils {
 						is.close();
 						os.close();
 						
-						map.put("path","/upload/"+uuidFileName);
+						map.put("path",request.getContextPath()+"/upload/"+uuidFileName);
 						map.put("filename", fileName);
 					}
 					System.out.println(map);
