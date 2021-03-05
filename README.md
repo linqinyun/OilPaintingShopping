@@ -12,17 +12,9 @@ Tomcat
 ## 数据库
 MySql
 ## 注意
-- github源码中未包含所需jar包
->需要jar包
-- 连接池--c3p0  
-- 上传--commons-fileupload,commons-io  
-- mysql--mysql-connector-java  
-- jstl,el--standard,jstl
->idea集成开发环境需要tomcat部分jar
-- jsp-api.jar
-- servlet-api.jar
-
-
+- 注意jar加载
+- sql文件自行导入数据库
+- c3p0连接池部分信息根据实际自行修改
 
 # 其他
-练习项目
+练习项目，存在部分样式错误，功能单一等情况

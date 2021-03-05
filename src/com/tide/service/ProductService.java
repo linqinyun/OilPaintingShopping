@@ -1,5 +1,6 @@
 package com.tide.service;
 
+import com.tide.daomain.PageBean;
 import com.tide.daomain.Product;
 
 import java.util.List;
@@ -16,4 +17,6 @@ public interface ProductService {
     void update(Product product);
 
     void delete(Integer pid);
+
+    PageBean<Product> findByPage(int page);
 }

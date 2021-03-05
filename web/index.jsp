@@ -42,124 +42,49 @@
     </div>
     <div class="img-content">
         <ul>
-            <li>
-                <img src="${pageContext.request.contextPath}/image/wumingnvlang.jpg" class="img-li">
-                <div class="info">
-                    <h3>无名女郎</h3>
-                    <p>
-                        图片描述可以分为多种，一种是单一说明，就比如直接的告诉看图者这篇文 章是要介绍什么样子的内容，一些配图可以分为含蓄类型的，这样的配图一般会 图片描述可以分为多种.
-                    </p>
-                    <div class="img-btn">
-                        <div class="price">￥5800</div>
-                        <a href="#" class="cart">
-                            <div class="btn">
-                                <img src="${pageContext.request.contextPath}/image/cart.svg">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <img src="${pageContext.request.contextPath}/image/wumingnvlang.jpg" class="img-li">
-                <div class="info">
-                    <h3>无名女郎</h3>
-                    <p>
-                        图片描述可以分为多种，一种是单一说明，就比如直接的告诉看图者这篇文 章是要介绍什么样子的内容，一些配图可以分为含蓄类型的，这样的配图一般会 图片描述可以分为多种.
-                    </p>
-                    <div class="img-btn">
-                        <div class="price">￥5800</div>
-                        <div class="btn">
+            <c:forEach var="p" items="${pageBean.list}">
+                <li>
+                    <img src="${pageContext.request.contextPath}${p.path}" class="img-li">
+                    <div class="info">
+                        <h3>${p.pname}</h3>
+                        <p>
+                            ${p.description}
+                        </p>
+                        <div class="img-btn">
+                            <div class="price">￥${p.price}</div>
                             <a href="#" class="cart">
-                                <img src="${pageContext.request.contextPath}/image/cart.svg">
+                                <div class="btn">
+                                    <img src="${pageContext.request.contextPath}/image/cart.svg">
+                                </div>
                             </a>
                         </div>
                     </div>
-                </div>
-            </li>
-            <li>
-                <img src="${pageContext.request.contextPath}/image/wumingnvlang.jpg" class="img-li">
-                <div class="info">
-                    <h3>无名女郎</h3>
-                    <p>
-                        图片描述可以分为多种，一种是单一说明，就比如直接的告诉看图者这篇文 章是要介绍什么样子的内容，一些配图可以分为含蓄类型的，这样的配图一般会 图片描述可以分为多种.
-                    </p>
-                    <div class="img-btn">
-                        <div class="price">￥5800</div>
-                        <div class="btn">
-                            <a href="#" class="cart">
-                                <img src="${pageContext.request.contextPath}/image/cart.svg">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <img src="${pageContext.request.contextPath}/image/wumingnvlang.jpg" class="img-li">
-                <div class="info">
-                    <h3>无名女郎</h3>
-                    <p>
-                        图片描述可以分为多种，一种是单一说明，就比如直接的告诉看图者这篇文 章是要介绍什么样子的内容，一些配图可以分为含蓄类型的，这样的配图一般会 图片描述可以分为多种.
-                    </p>
-                    <div class="img-btn">
-                        <div class="price">￥5800</div>
-                        <div class="btn">
-                            <a href="#" class="cart">
-                                <img src="${pageContext.request.contextPath}/image/cart.svg">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <img src="${pageContext.request.contextPath}/image/wumingnvlang.jpg" class="img-li">
-                <div class="info">
-                    <h3>无名女郎</h3>
-                    <p>
-                        图片描述可以分为多种，一种是单一说明，就比如直接的告诉看图者这篇文 章是要介绍什么样子的内容，一些配图可以分为含蓄类型的，这样的配图一般会 图片描述可以分为多种.
-                    </p>
-                    <div class="img-btn">
-                        <div class="price">￥5800</div>
-                        <div class="btn">
-                            <a href="#" class="cart">
-                                <img src="${pageContext.request.contextPath}/image/cart.svg">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <img src="${pageContext.request.contextPath}/image/wumingnvlang.jpg" class="img-li">
-                <div class="info">
-                    <h3>无名女郎</h3>
-                    <p>
-                        图片描述可以分为多种，一种是单一说明，就比如直接的告诉看图者这篇文 章是要介绍什么样子的内容，一些配图可以分为含蓄类型的，这样的配图一般会 图片描述可以分为多种.
-                    </p>
-                    <div class="img-btn">
-                        <div class="price">￥5800</div>
-                        <div class="btn">
-                            <a href="#" class="cart">
-                                <img src="${pageContext.request.contextPath}/image/cart.svg">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </li>
+                </li>
+            </c:forEach>
+
+
         </ul>
     </div>
     <div class="page-nav">
         <ul>
-            <li><a href="#">首页</a></li>
-            <li><a href="#">上一页</a></li>
-            <li><span class="first-page">1</span></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">…</a></li>
-            <li><a href="#">98</a></li>
-            <li><a href="#">99</a></li>
-            <li><a href="#">下一页</a></li>
-            <li><a href="#">尾页</a></li>
+            <c:if test="${pageBean.page != 1}">
+                <li><a href="${pageContext.request.contextPath}/IndexServlet?page=1">首页</a></li>
+                <li><a href="${pageContext.request.contextPath}/IndexServlet?page=${pageBean.page-1}">上一页</a></li>
+            </c:if>
+
+            <c:forEach var="i" begin="1" end="${pageBean.totalPage}">
+                <c:if test="${pageBean.page == i}">
+                    <li><span class="first-page">${i}</span></li>
+                </c:if>
+                <c:if test="${pageBean.page != i}">
+                    <li><a href="${pageContext.request.contextPath}/IndexServlet?page=${i}">${i}</a></li>
+                </c:if>
+            </c:forEach>
+            <c:if test="${pageBean.page != pageBean.totalPage}">
+                <li><a href="${pageContext.request.contextPath}/IndexServlet?page=${pageBean.page+1}">下一页</a></li>
+                <li><a href="${pageContext.request.contextPath}/IndexServlet?page=${pageBean.totalPage}">尾页</a></li>
+            </c:if>
+
         </ul>
     </div>
 </div>

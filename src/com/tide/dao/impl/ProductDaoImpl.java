@@ -206,4 +206,60 @@ public class ProductDaoImpl implements ProductDao {
             }
         }
     }
+
+    @Override
+    public int findCount() {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        Long count = 0l;
+        try {
+            conn = JDBCUtils.getConnection();
+            String sql = "select count(*) as count from product";
+            pstmt = conn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            if (rs.next()){
+                count = rs.getLong("count");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            JDBCUtils.release(rs,pstmt,conn);
+        }
+        return count.intValue();
+    }
+
+    @Override
+    public List<Product> findByPage(int begin, int limit) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        List<Product> list = null;
+        try {
+            conn = JDBCUtils.getConnection();
+            String sql = "select * from product order by pid desc limit ?,? ";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1,begin);
+            pstmt.setInt(2,limit);
+            rs = pstmt.executeQuery();
+            list = new ArrayList<Product>();
+            while (rs.next()) {
+                Product product = new Product();
+                product.setPid(rs.getInt("pid"));
+                product.setPname(rs.getString("pname"));
+                product.setAuthor(rs.getString("author"));
+                product.setPrice(rs.getDouble("price"));
+                product.setDescription(rs.getString("description"));
+                product.setFilename(rs.getString("filename"));
+                product.setPath(rs.getString("path"));
+
+                list.add(product);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            JDBCUtils.release(rs,pstmt,conn);
+        }
+        return list;
+    }
 }
