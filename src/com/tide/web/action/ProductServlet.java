@@ -50,7 +50,11 @@ public class ProductServlet extends HttpServlet {
         Product product = productService.findOne(pid);
         String path = product.getPath();
         if (path != null && !"".equals(path)) {
-            this.getServletContext().getRealPath(path);
+            String realPath = this.getServletContext().getRealPath(path);
+            File file = new File(realPath);
+            if (file.exists()){
+                file.delete();
+            }
         }
         productService.delete(pid);
         response.sendRedirect(request.getContextPath() + "/ProductServlet?method=findAll");

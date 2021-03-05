@@ -43,6 +43,7 @@ public class CategoryServlet extends HttpServlet {
      * @param response
      */
     private void delete(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
         Integer cid = Integer.parseInt(request.getParameter("cid"));
         CategoryService categoryService = new CategoryServiceImpl();
         categoryService.delete(cid);

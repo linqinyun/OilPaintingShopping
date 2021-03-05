@@ -2,6 +2,7 @@ package com.tide.dao;
 
 import com.tide.daomain.Category;
 
+import java.sql.Connection;
 import java.util.List;
 
 public interface CategoryDao {
@@ -15,4 +16,6 @@ public interface CategoryDao {
     void update(Category category);
 
     void delete(Integer cid);
+
+    void delete(Connection conn, Integer cid);
 }
