@@ -26,7 +26,7 @@ public class UserServlet extends HttpServlet {
         // 1.将session销毁
         request.getSession().invalidate();
         // 2.页面进行跳转，跳转登录页面
-        response.sendRedirect(request.getContextPath()+"/admin/login.jsp");
+        response.sendRedirect(request.getContextPath()+"/login.jsp");
     }
 
     /**
@@ -50,7 +50,7 @@ public class UserServlet extends HttpServlet {
             // error
             request.setAttribute("msg","用户名或密码错误");
 
-            request.getRequestDispatcher("/admin/login.jsp").forward(request,response);
+            request.getRequestDispatcher("/login.jsp").forward(request,response);
 
         }else {
             // success

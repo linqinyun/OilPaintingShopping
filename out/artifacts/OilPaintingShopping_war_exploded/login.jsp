@@ -57,10 +57,10 @@
         </section>
     </section>
 </div>
-<script src="vendor/jquery/jquery-1.11.1.min.js"></script>
-<script src="vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
-<script src="assets/js/utility/utility.js"></script>
-<script src="assets/js/demo/demo.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="${pageContext.request.contextPath }/vendor/jquery/jquery-1.11.1.min.js"></script>
+<script src="${pageContext.request.contextPath }/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
+<script src="${pageContext.request.contextPath }/assets/js/utility/utility.js"></script>
+<script src="${pageContext.request.contextPath }/assets/js/demo/demo.js"></script>
+<script src="${pageContext.request.contextPath }/assets/js/main.js"></script>
 </body>
 </html>
